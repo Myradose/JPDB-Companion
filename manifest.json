@@ -1,0 +1,22 @@
+{
+    "manifest_version": 2,
+    "name": "JPDB Companion",
+    "description": "This extension adds useful features to JPDB.io",
+    "version": "1.0",
+    "background": {
+      "scripts": ["background.js"],
+      "persistent": false
+    },
+    "permissions": [
+      "tabs",
+      "https://jpdb.io/*"
+    ],
+    "content_scripts": [{
+      "matches": ["https://jpdb.io/*"],
+      "js": ["content.js"]
+    }],
+    "browser_action": {
+      "default_title": "JPDB Companion"
+    }
+}
+  
