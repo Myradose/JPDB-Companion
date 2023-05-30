@@ -17,8 +17,14 @@ chrome.runtime.onMessage.addListener(
 function parseDueItems(htmlString) {
     let parser = new DOMParser();
     let doc = parser.parseFromString(htmlString, "text/html");
-    let dueItems = doc.querySelector(".strong").innerText;
-    let dueVocab = doc.querySelector(".strong:nth-child(2)").innerText;
-    let dueKanji = doc.querySelector(".strong:nth-child(3)").innerText;
-    return dueItems + " due items (" + dueVocab + " vocabulary and " + dueKanji + " kanji)";
+    
+    // Select the first paragraph element
+    let firstParagraph = doc.querySelector("p");
+    
+    // Make sure the paragraph was found, otherwise return a default string
+    if (firstParagraph) {
+        return firstParagraph.innerText;
+    }
+    return "";
 }
+
