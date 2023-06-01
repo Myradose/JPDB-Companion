@@ -4,7 +4,6 @@ function updateBadge() {
 }
   
 function insertDueCounts(dueText) {
-    // dueText = dueText.replace(/(\r\n|\n|\r)/gm, " "); // remove newlines
     dueText = dueText.replace(/\u00A0/g, ' ');
     var reviewContainer = document.querySelector('.container.bugfix');
     if (reviewContainer) {
