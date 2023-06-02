@@ -100,8 +100,18 @@ if (prevDueText && window.location.href.includes('review')) {
             countTodayReviews(card.reviews);
         }
 
+        // Iterate over the 'cards_vocabulary_en_jp' array
+        for (const card of data.cards_vocabulary_en_jp) {
+            countTodayReviews(card.reviews);
+        }
+
         // Iterate over the 'cards_kanji_keyword_char' array
         for (const card of data.cards_kanji_keyword_char) {
+            countTodayReviews(card.reviews);
+        }
+
+        // Iterate over the 'cards_kanji_char_keyword' array
+        for (const card of data.cards_kanji_char_keyword) {
             countTodayReviews(card.reviews);
         }
 
